@@ -148,7 +148,7 @@ export default {
 			})
 			return output;
 		},
-		getDownloadLink() {
+		getDownloadLink(event) {
 			return 'data:text/plain;charset=utf-8,' + encodeURIComponent(this.data.output);
 		},
 		notify(id) {
@@ -228,23 +228,19 @@ export default {
 						<div class="mb-2 text-right">
 							<button
 								class="btn btn-primary mb-2"
+								:class="{ disabled: data.output==null }"
 								@click="copyOutput()"
+								:disabled="data.output==null"
 							>
 								<i class="fas fa-copy"></i>
 								{{ $t('copy') }}
-							</button>
-							<button
-								class="btn btn-primary mb-2"
-								@click="copyPermalink()"
-							>
-								<i class="fas fa-link"></i>
-								{{ $t('permalink') }}
 							</button>
 							<a
 								class="btn btn-primary mb-2"
 								download="Base64 Encoded Data.b64"
 								:href="getDownloadLink()"
-								v-if="states.codecMode==modes.ENCODE"
+								v-if="states.codecMode==modes.ENCODE && data.output!=null"
+								:disabled="data.output==null"
 							>
 								<i class="fas fa-save"></i>
 								{{ $t('save') }}
@@ -253,11 +249,28 @@ export default {
 								class="btn btn-primary mb-2"
 								download="Base64 Decoded Data.txt"
 								:href="getDownloadLink()"
-								v-if="states.codecMode==modes.DECODE"
+								v-if="states.codecMode==modes.DECODE && data.output!=null"
+								:disabled="data.output==null"
 							>
 								<i class="fas fa-save"></i>
 								{{ $t('save') }}
 							</a>
+							<a
+								class="btn btn-primary mb-2 disabled"
+								download="Base64 Decoded Data.txt"
+								href="#"
+								v-if="data.output==null"
+							>
+								<i class="fas fa-save"></i>
+								{{ $t('save') }}
+							</a>
+							<button
+								class="btn btn-primary mb-2"
+								@click="copyPermalink()"
+							>
+								<i class="fas fa-link"></i>
+								{{ $t('permalink') }}
+							</button>
 						</div>
 						<div class="flex-grow-1">
 							<textarea

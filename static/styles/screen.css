@@ -51,6 +51,11 @@ nav {
 .navbar-brand  {
 	color: var(--primary-dark);
 }
+.btn-primary:disabled, .disabled {
+	color: var(--secondary-medium) !important;
+	background-color: var(--primary-dark) !important;
+	border-color: var(--secondary-medium) !important;
+}
 .btn-primary, .btn-primary:visited {
 	color: var(--primary-dark);
 	background-color: var(--secondary-medium);
