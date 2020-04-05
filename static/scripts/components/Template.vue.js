@@ -94,7 +94,7 @@ export default {
 				this.data.output = this.$t('invalidInput');
 			}
 		},
-		inputChanged(event) {
+		inputChanged() {
 			if (this.states.codecMode == this.modes.ENCODE) {
 				this.encode();
 			} else if (this.states.codecMode == this.modes.DECODE) {
@@ -221,7 +221,7 @@ export default {
 								spellcheck="false"
 								:placeholder="$t('inputPlaceholder')"
 								v-model="data.input"
-								@input="inputChanged($event)"
+								@input="inputChanged()"
 							></textarea>
 						</div>
 					</div>
