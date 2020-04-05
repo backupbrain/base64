@@ -48,6 +48,9 @@ body {
 nav {
 	background-color: var(--secondary-medium);
 }
+textarea {
+	min-height: 30rem;
+}
 .navbar {
 	display: block;
 }
