@@ -59,7 +59,7 @@ export default {
 		if (this.queryParameters.INPUT in this.$route.query) {
 			this.setInput(this.$route.query[this.queryParameters.INPUT]);
 		}
-		this.inputChanged();
+		//this.inputChanged();
 	},
 	methods: {
 		setCodec(mode) {
