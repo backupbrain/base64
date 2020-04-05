@@ -81,7 +81,7 @@ export default {
 			this.inputChanged();
 		},
 		encode() {
-			if (this.data.input != null) {
+			if ((this.data.input != null) && (this.data.input != '')) {
 				this.data.output = btoa(this.data.input);
 			} else {
 				this.data.output = null;
