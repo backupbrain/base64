@@ -160,6 +160,7 @@ export default {
 		}
 	},
 	template: `
+		<div>
 		<div class="d-flex flex-column vh-100">
 		<article class="alerts fixed-top">
 			<div
@@ -279,6 +280,12 @@ export default {
 				</div>
 			</section>
 		</footer>
+		</div>
+		<article>
+			<section class="container">
+				<div class="fb-comments" data-href="https://backupbrain.github.io/quantum-compiler-simulator/" data-width="100%" data-numposts="20" data-colorscheme="dark">Loading Facebook Comments...</div>
+			</section>
+		</article>
 		</div>
 	`
 };
