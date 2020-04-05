@@ -1,6 +1,5 @@
 import Template from './components/Template.vue.js';
 
-
 const i18n = new VueI18n({
 	locale: 'en',
 	fallbackLocale: 'en',
@@ -16,7 +15,6 @@ document.addEventListener("DOMContentLoaded", () => {
 		]
 	});
 
-	console.log("document loaded");
 	application = new Vue({
 		el: '#application',
 		i18n,
