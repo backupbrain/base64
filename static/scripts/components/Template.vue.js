@@ -217,6 +217,7 @@ export default {
 							<textarea
 								class="w-100 h-100 p-2"
 								name="encoded"
+								spellcheck="false"
 								:placeholder="$t('inputPlaceholder')"
 								v-model="data.input"
 								@input="inputChanged($event)"
@@ -276,6 +277,7 @@ export default {
 							<textarea
 								class="w-100 h-100 p-2"
 								name="decoded"
+								spellcheck="false"
 								readonly
 								:placeholder="$t('outputPlaceholder')"
 								v-model="data.output"
