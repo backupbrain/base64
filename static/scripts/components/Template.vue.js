@@ -53,13 +53,14 @@ export default {
 		}
 	},
 	mounted() {
+		this.data.output = null;
 		if (this.queryParameters.MODE in this.$route.query) {
 			this.setCodec(this.$route.query[this.queryParameters.MODE]);
 		}
 		if (this.queryParameters.INPUT in this.$route.query) {
 			this.setInput(this.$route.query[this.queryParameters.INPUT]);
 		}
-		this.inputChanged();
+
 	},
 	methods: {
 		setCodec(mode) {
@@ -81,6 +82,7 @@ export default {
 			this.inputChanged();
 		},
 		encode() {
+			console.log("encoding: " + this.data.input);
 			if ((this.data.input == null) || (this.data.input == '')) {
 				this.data.output = null;
 			} else {
@@ -89,7 +91,11 @@ export default {
 		},
 		decode() {
 			try {
-				this.data.output = atob(this.data.input);
+				if ((this.data.input == null) || (this.data.input == '')) {
+					this.data.output = null;
+				} else {
+					this.data.output = atob(this.data.input);
+				}
 			} catch (exception) {
 				this.data.output = this.$t('invalidInput');
 			}
@@ -216,7 +222,7 @@ export default {
 						</div>
 						<div class="flex-grow-1">
 							<textarea
-								class="w-100 h-100 p-2"
+								class="w-100 h-100 p-2 rounded"
 								name="encoded"
 								spellcheck="false"
 								:placeholder="$t('inputPlaceholder')"
@@ -276,7 +282,7 @@ export default {
 						</div>
 						<div class="flex-grow-1">
 							<textarea
-								class="w-100 h-100 p-2"
+								class="w-100 h-100 p-2 rounded"
 								name="decoded"
 								spellcheck="false"
 								readonly
