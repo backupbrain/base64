@@ -296,8 +296,8 @@ export default {
 			</section>
 		</article>
 		<footer>
-			<section class="container">
-				<div id="copyright pb-4">
+			<section class="container pb-4">
+				<div id="copyright">
 					&copy; 2020 <a href="https://github.com/backupbrain">Tony Gaitatzis</a>, <a href="https://opensource.org/licenses/MIT">MIT License</a>
 				</div>
 			</section>
