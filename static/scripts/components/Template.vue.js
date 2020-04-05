@@ -59,7 +59,7 @@ export default {
 		if (this.queryParameters.INPUT in this.$route.query) {
 			this.setInput(this.$route.query[this.queryParameters.INPUT]);
 		}
-		//this.inputChanged();
+		this.inputChanged();
 	},
 	methods: {
 		setCodec(mode) {
@@ -81,10 +81,10 @@ export default {
 			this.inputChanged();
 		},
 		encode() {
-			if ((this.data.input != null) && (this.data.input != '')) {
-				this.data.output = btoa(this.data.input);
-			} else {
+			if ((this.data.input == null) || (this.data.input == '')) {
 				this.data.output = null;
+			} else {
+				this.data.output = btoa(this.data.input);
 			}
 		},
 		decode() {
