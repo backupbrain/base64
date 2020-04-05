@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="255px" height="255px" viewBox="0 0 255 255" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.6 (67491) - http://www.bohemiancoding.com/sketch -->
+    <title>Base64 Logo</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Base64-Logo" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <rect id="Rectangle" fill="#252D40" x="0" y="0" width="255" height="255"></rect>
+        <text id="64" fill="#2DA384" font-family="FjallaOne-Regular, Fjalla One" font-size="219" font-weight="normal">
+            <tspan x="48.0463867" y="288">64</tspan>
+        </text>
+    </g>
+</svg>

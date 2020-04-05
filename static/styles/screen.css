@@ -1,0 +1,72 @@
+:root {
+	--primary-dark: #252D40;
+
+	--secondary-light: #a1d7c3;
+	--secondary-medium: #2da384;
+	--secondary-dark: #118062;
+};
+html {
+	transition: all 0.5s ease;
+}
+body {
+	color: var(--secondary-dark);
+}
+div, p, button, a, li, th, td, dt, dd {
+	font-family: 'Noto Sans', sans-serif;
+}
+h1, h2 {
+	font-family: 'Fjalla One', sans-serif;
+}
+h1 {
+	font-size: 1.8rem;
+	margin-bottom: 0px;
+}
+a {
+	color: var(--secondary-medium);
+}
+textarea {
+	font-family: 'Nova Mono', monospace;
+	background-color: var(--secondary-light);
+}
+body {
+	background-color: var(--primary-dark);
+}
+nav {
+	background-color: var(--secondary-medium);
+}
+.navbar-brand  {
+	color: var(--primary-dark);
+}
+.btn-primary, .btn-primary:visited {
+	color: var(--primary-dark);
+	background-color: var(--secondary-medium);
+	border-color: var(--secondary-medium);
+}
+.btn-primary:hover {
+    color: #fff;
+    background-color: #0069d9;
+    border-color: #0062cc;
+}
+.btn-primary:active, .btn-primary:focus {
+    color: var(--primary-dark);
+	background-color: var(--secondary-dark);
+	border-color: var(--secondary-dark);
+}
+
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle {
+	color: var(--primary-dark);
+	background-color: var(--secondary-dark);
+	border-color: var(--secondary-dark);
+}
+.hidden {
+	height: 0;
+	padding: 0;
+	margin: 0;
+	border: 0;
+	overflow: hidden;
+	transition: all 0.1s linear;
+}
+.alert {
+	margin-bottom: 0;
+	transition: all 0.1s linear;
+}
