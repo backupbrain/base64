@@ -21,6 +21,10 @@ h1 {
 	font-size: 1.8rem;
 	margin-bottom: 0px;
 }
+h1 a, h1 a:hover, h1 a:focus, h1 a:visited {
+	color: var(--primary-dark);
+	text-decoration: none;
+}
 a, a:visited {
 	color: var(--secondary-medium);
 	transition: all 0.5s ease;
