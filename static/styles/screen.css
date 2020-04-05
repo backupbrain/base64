@@ -48,6 +48,9 @@ body {
 nav {
 	background-color: var(--secondary-medium);
 }
+.navbar {
+	display: block;
+}
 .navbar-brand  {
 	color: var(--primary-dark);
 }
