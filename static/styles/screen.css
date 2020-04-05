@@ -41,15 +41,13 @@ a:hover, a:focus {
 textarea {
 	font-family: 'Nova Mono', monospace;
 	background-color: var(--secondary-light);
+	min-height: 30rem;
 }
 body {
 	background-color: var(--primary-dark);
 }
 nav {
 	background-color: var(--secondary-medium);
-}
-textarea {
-	min-height: 30rem;
 }
 .navbar {
 	display: block;
