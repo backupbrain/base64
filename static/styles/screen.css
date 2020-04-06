@@ -6,10 +6,10 @@ html {
 		display: inline !important;
 	}
 	.textarea {
-		min-height: 8rem;
+		min-height: 8em;
 	}
 	h1 {
-		font-size: 1.2rem;
+		font-size: 1.2em;
 	}
 }
 @media (min-width: 768px) {
@@ -17,10 +17,10 @@ html {
 		display: inline !important;
 	}
 	.textarea {
-		min-height: 15rem;
+		min-height: 15em;
 	}
 	h1 {
-		font-size: 1.2rem;
+		font-size: 1.2em;
 	}
 }
 @media (min-width: 992px) {
@@ -28,10 +28,10 @@ html {
 		display: inline !important;
 	}
 	.textarea {
-		min-height: 20rem;
+		min-height: 20em;
 	}
 	h1 {
-		font-size: 1.8rem;
+		font-size: 1.8em;
 	}
 }
 @media (min-width: 1200px) {
@@ -39,10 +39,10 @@ html {
 		display: inline !important;
 	}
 	.textarea {
-		min-height: 20rem;
+		min-height: 20em;
 	}
 	h1 {
-		font-size: 1.8rem;
+		font-size: 1.8em;
 	}
 }
 :root {
@@ -57,9 +57,13 @@ html {
 }
 body {
 	color: var(--secondary-dark);
+	/* font-size: 80%; */
 }
 div, p, button, a, li, th, td, dt, dd {
 	font-family: 'Noto Sans', sans-serif;
+}
+button span {
+	font-size: 0.9em;
 }
 h1, h2 {
 	font-family: 'Fjalla One', sans-serif;
@@ -100,7 +104,7 @@ textarea, .textarea {
 }
 @media (min-width: 768px) {
 	textarea {
-		min-height: 30rem;
+		min-height: 30em;
 	}
 }
 body {
