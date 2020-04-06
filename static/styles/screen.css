@@ -97,7 +97,7 @@ textarea, .textarea {
 }
 [contenteditable][placeholder]:empty:before, .textarea:empty:before {
   content: attr(placeholder);
-  position: absolute;
+  /* position: absolute; */
   color: gray;
   background-color: transparent;
   display: inline-block;
