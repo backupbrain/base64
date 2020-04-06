@@ -9,7 +9,7 @@ html {
 		min-height: 8em;
 	}
 	h1 {
-		font-size: 1.2em;
+		font-size: 1.05em;
 	}
 }
 @media (min-width: 768px) {
@@ -20,7 +20,7 @@ html {
 		min-height: 15em;
 	}
 	h1 {
-		font-size: 1.2em;
+		font-size: 1.1em;
 	}
 }
 @media (min-width: 992px) {
