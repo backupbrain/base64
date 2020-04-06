@@ -86,6 +86,7 @@ textarea, .textarea {
   position: absolute;
   color: gray;
   background-color: transparent;
+  overflow: wrap;
 }
 @media (min-width: 768px) {
 	textarea {
