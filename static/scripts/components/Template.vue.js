@@ -56,7 +56,7 @@ export default {
 		}
 	},
 	created() {
-		if (navigator.hasOwnProperty('clipboard')) {
+		if (typeof(navigator.clipboard) == 'object') {
 			this.states.hasClipboard = true;
 		}
 	},
