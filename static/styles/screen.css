@@ -101,7 +101,7 @@ textarea, .textarea {
   color: gray;
   background-color: transparent;
   display: inline-block;
-  overflow: wrap;
+  overflow: hidden;
 }
 @media (min-width: 768px) {
 	textarea {
