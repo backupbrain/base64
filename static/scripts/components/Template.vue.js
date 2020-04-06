@@ -163,10 +163,10 @@ export default {
 				DECODE: 'decode'
 			},
 			alerts: {
-				copySuccess: { type: 'success', message: this.$t('copySuccess') },
-				permalinkSuccess: { type: 'success', message: this.$t('permalinkSuccess') },
-				copyFail: { type: 'danger', message: this.$t('copyFail') },
-				pasteFail: { type: 'danger', message: this.$t('pasteFail') },
+				copySuccess: { type: 'success', message: 'copySuccess' },
+				permalinkSuccess: { type: 'success', message: 'permalinkSuccess' },
+				copyFail: { type: 'danger', message: 'copyFail' },
+				pasteFail: { type: 'danger', message: 'pasteFail' },
 			},
 			data: {
 				input: null,
@@ -376,7 +376,7 @@ export default {
 			>
 				<alert
 					:type="alert.type"
-					:message="alert.message"
+					:message="$t(alert.message)"
 					:ref="'alert_' + index"
 				></alert>
 			</div>
