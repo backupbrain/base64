@@ -1,4 +1,5 @@
 import Alert from './Alert.vue.js';
+import Dropdown from './Dropdown.vue.js';
 
 export default {
 	name: 'Template',
@@ -148,12 +149,14 @@ export default {
 	},
 	components: {
 		'alert': Alert,
+		'dropdown': Dropdown,
 	},
 	data () {
 		return {
 			queryParameters: {
 				MODE: 'mode',
-				INPUT: 'q'
+				INPUT: 'q',
+				LOCALE: 'lang',
 			},
 			modes: {
 				ENCODE: 'encode',
@@ -172,8 +175,17 @@ export default {
 			states: {
 				codecMode: 'decode',
 				hasClipboard: false,
-			}
-
+			},
+			supportedLanguages: [
+				{ id: 'en', name: 'English' },
+				{ id: 'fr', name: 'Français' },
+				{ id: 'es', name: 'Español' },
+				{ id: 'de', name: 'Deutsche' },
+				{ id: 'gr', name: 'Ελληνικά' },
+				{ id: 'ar', name: 'عربى' },
+				{ id: 'tr', name: 'Türk' },
+			],
+			currentLanguage: { id: 'en', name: 'English' },
 		}
 	},
 	created() {
@@ -190,8 +202,34 @@ export default {
 			this.setInput(this.$route.query[this.queryParameters.INPUT]);
 		}
 
+		if (this.queryParameters.LOCALE in this.$route.query) {
+			var wasLanguageFound = false;
+			var localeId = this.$route.query[this.queryParameters.LOCALE];
+			for (var i=0; i<this.supportedLanguages.length; i++) {
+				var language = this.supportedLanguages[i];
+				if (localeId == language.id) {
+					this.setLocale(language);
+					wasLanguageFound = true;
+					break;
+				}
+			}
+			if (!wasLanguageFound) {
+				this.setLocale(this.supportedLanguages[0]);
+			}
+		} else {
+			this.setLocale(this.supportedLanguages[0]);
+		}
+
 	},
 	methods: {
+		setLocale(locale) {
+			this.currentLanguage = locale;
+			this.setLocaleId(locale.id);
+			this.$refs["languageSwitcher"].select(locale);
+		},
+		setLocaleId(localeId) {
+			this.$i18n.locale = localeId;
+		},
 		setCodec(mode) {
 			if ((mode == this.modes.ENCODE) || (mode == this.modes.DECODE)) {
 				this.states.codecMode = mode;
@@ -211,7 +249,6 @@ export default {
 			this.inputChanged();
 		},
 		encode() {
-			console.log("encoding: " + this.data.input);
 			if ((this.data.input == null) || (this.data.input == '')) {
 				this.data.output = null;
 			} else {
@@ -234,7 +271,6 @@ export default {
 			this.inputChanged();
 		},
 		inputChanged(event) {
-			console.log(event);
 			if (this.states.codecMode == this.modes.ENCODE) {
 				this.encode();
 			} else if (this.states.codecMode == this.modes.DECODE) {
@@ -273,11 +309,10 @@ export default {
 			var baseUrl = window.location.origin + window.location.pathname;
 			var params = {}
 			params[this.queryParameters.MODE] = this.states.codecMode;
+			params[this.queryParameters.LOCALE] = this.currentLanguage.id;
 			if (this.data.input != null) {
-				console.log('q != null')
 				params[this.queryParameters.INPUT] = this.data.input;
 			}
-			console.log(params)
 			var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
 			var output = `${baseUrl}?${queryString}`;
 
@@ -296,10 +331,7 @@ export default {
 			return 'data:text/plain;charset=utf-8,' + encodeURIComponent(this.data.output);
 		},
 		notify(id) {
-			console.log(this.$refs);
 			var alertId = `alert_${id}`;
-			console.log(alertId);
-			console.log(this.$refs[alertId][0]);
 			this.$refs[alertId][0].show();
 		},
 		scrollToOutput() {
@@ -355,6 +387,16 @@ export default {
 					<img src="static/images/logo.svg" width="30" height="30" class="d-inline-block align-top align-middle" :alt="$t('logoAlt')">
 					{{ $t('title') }}
 				</h1></a>
+				<ul class="my-2 navbar-nav mr-auto">
+					<li class="nav-item dropdown">
+						<dropdown
+							:options='supportedLanguages'
+							:default='currentLanguage.id'
+							@select="setLocale($event)"
+							ref="languageSwitcher"
+						></dropdown>
+					</li>
+				</ul>
 			</div>
 		</nav>
 		<article class="h-100 flex-grow-1">

@@ -114,8 +114,14 @@ body {
 nav {
 	background-color: var(--secondary-medium);
 }
+nav a {
+	color: var(--primary-dark);
+}
+.navbar-nav .dropdown-menu {
+    position: absolute !important;
+}
 @media (min-width: 576px) {
-	.
+	
 }
 .navbar {
 	display: block;
@@ -166,4 +172,7 @@ nav {
 .alert {
 	margin-bottom: 0;
 	transition: all 0.1s linear;
+}
+.modal.show {
+	display: block !important;
 }
