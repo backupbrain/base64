@@ -176,3 +176,10 @@ nav a {
 .modal.show {
 	display: block !important;
 }
+.dropdown-menu {
+	background-color: var(--secondary-medium);
+	z-index: 1099;
+}
+.dropdown-item {
+	color: var(--primary-dark);
+}

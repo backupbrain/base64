@@ -387,7 +387,7 @@ export default {
 					<img src="static/images/logo.svg" width="30" height="30" class="d-inline-block align-top align-middle" :alt="$t('logoAlt')">
 					{{ $t('title') }}
 				</h1></a>
-				<ul class="my-2 navbar-nav mr-auto">
+				<ul class="ml-auto navbar-nav">
 					<li class="nav-item dropdown">
 						<dropdown
 							:options='supportedLanguages'

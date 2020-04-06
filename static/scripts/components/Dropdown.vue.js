@@ -47,6 +47,7 @@ export default {
 			this.selection = option;
 		},
 		selected(option) {
+			console.log(option);
 			this.selection = option;
 			this.$emit(this.emissions.SELECT, option);
 			this.close();
