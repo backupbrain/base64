@@ -422,7 +422,7 @@ export default {
 		<nav class="navbar mb-4">
 			<div class="container">
 				<a class="navbar-brand" href="#"><h1>
-					<img src="static/images/logo.svg" width="30" height="30" class="d-inline-block align-top align-middle" :alt="$t('logoAlt')">
+					<img src="static/images/logo.svg" width="30" height="30" class="d-inline-block align-top align-bottom" :alt="$t('logoAlt')">
 					{{ $t('title') }}
 				</h1></a>
 				<ul class="ml-auto navbar-nav">
