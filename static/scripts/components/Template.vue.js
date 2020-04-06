@@ -397,6 +397,15 @@ export default {
 	},
 	template: `
 		<div>
+
+		<div id="fb-root"></div>
+		<script
+			async
+			defer
+			crossorigin="anonymous"
+			:src="currentLanguage.fbLink"
+		></script>
+
 		<div class="d-flex flex-column vh-100">
 		<article class="alerts fixed-top">
 			<div
