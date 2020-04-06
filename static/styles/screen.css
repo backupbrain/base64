@@ -1,3 +1,29 @@
+html {
+  scroll-behavior: smooth;
+}
+@media (max-width: 767px) {
+	.d-xs-inline {
+		display: inline !important;
+	}
+}
+@media (min-width: 768px) {
+	.d-sm-inline {
+		display: inline !important;
+	}
+
+}
+@media (min-width: 992px) {
+	.d-md-inline {
+		display: inline !important;
+	}
+
+}
+@media (min-width: 1200px) {
+	.d-lg-inline {
+		display: inline !important;
+	}
+
+}
 :root {
 	--primary-dark: #252D40;
 
@@ -54,7 +80,7 @@ nav {
 	background-color: var(--secondary-medium);
 }
 @media (min-width: 576px) {
-
+	.
 }
 .navbar {
 	display: block;
