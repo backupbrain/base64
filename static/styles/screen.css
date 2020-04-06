@@ -64,9 +64,19 @@ a:hover, a:focus {
 	color: var(--secondary-light);
 	transition: all 0.5s ease;
 }
-textarea {
+textarea, .textarea {
 	font-family: 'Nova Mono', monospace;
 	background-color: var(--secondary-light);
+	color: var(--primary-dark);
+}
+.textarea:focus {
+	outline: 0px solid transparent;
+}
+[contenteditable][placeholder]:empty:before, .textarea:empty:before {
+  content: attr(placeholder);
+  position: absolute;
+  color: gray;
+  background-color: transparent;
 }
 @media (min-width: 768px) {
 	textarea {

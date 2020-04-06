@@ -102,7 +102,12 @@ export default {
 				this.data.output = this.$t('invalidInput');
 			}
 		},
-		inputChanged() {
+		handleInputKeystroke(event) {
+			this.data.input = event.target.innerText;
+			this.inputChanged();
+		},
+		inputChanged(event) {
+			console.log(event);
 			if (this.states.codecMode == this.modes.ENCODE) {
 				this.encode();
 			} else if (this.states.codecMode == this.modes.DECODE) {
@@ -244,14 +249,22 @@ export default {
 							</button>
 						</div>
 						<div class="flex-grow-1">
-							<textarea
+							<!--textarea
 								class="w-100 h-100 p-2 rounded"
 								name="encoded"
 								spellcheck="false"
 								:placeholder="$t('inputPlaceholder')"
 								v-model="data.input"
 								@input="inputChanged()"
-							></textarea>
+							></textarea-->
+							<div
+								class="w-100 h-100 p-2 rounded textarea"
+								contenteditable="true"
+								spellcheck="false"
+								:placeholder="$t('inputPlaceholder')"
+								v-model="data.input"
+								@input="handleInputKeystroke($event)"
+							></div>
 						</div>
 					</div>
 
@@ -323,14 +336,18 @@ export default {
 							</button>
 						</div>
 						<div class="flex-grow-1">
-							<textarea
+							<!--textarea
 								class="w-100 h-100 p-2 rounded"
 								name="decoded"
 								spellcheck="false"
 								readonly
 								:placeholder="$t('outputPlaceholder')"
 								v-model="data.output"
-							></textarea>
+							></textarea-->
+							<div
+								class="w-100 h-100 p-2 rounded textarea"
+								:placeholder="$t('outputPlaceholder')"
+							>{{ data.output }}</div>
 						</div>
 					</div>
 
