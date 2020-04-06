@@ -152,7 +152,7 @@ export default {
 				mitLicense: 'MIT Lisansı',
 				loadingFacebookComments: 'Facebook Yorumları Yükleniyor ...',
 			},
-			en: {
+			ru: {
 				title: 'Base64 кодер и декодер',
 				logoAlt: 'Изображение логотипа',
 				decodeAction: 'От Base64',
