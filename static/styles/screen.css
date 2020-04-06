@@ -5,24 +5,33 @@ html {
 	.d-xs-inline {
 		display: inline !important;
 	}
+	.textarea {
+		min-height: 9rem;
+	}
 }
 @media (min-width: 768px) {
 	.d-sm-inline {
 		display: inline !important;
 	}
-
+	.textarea {
+		min-height: 15rem;
+	}
 }
 @media (min-width: 992px) {
 	.d-md-inline {
 		display: inline !important;
 	}
-
+	.textarea {
+		min-height: 20rem;
+	}
 }
 @media (min-width: 1200px) {
 	.d-lg-inline {
 		display: inline !important;
 	}
-
+	.textarea {
+		min-height: 20rem;
+	}
 }
 :root {
 	--primary-dark: #252D40;

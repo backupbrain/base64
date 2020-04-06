@@ -50,8 +50,14 @@ export default {
 			},
 			states: {
 				codecMode: 'decode',
+				hasClipboard: false,
 			}
 
+		}
+	},
+	created() {
+		if (navigator.hasOwnProperty('clipboard')) {
+			this.states.hasClipboard = true;
 		}
 	},
 	mounted() {
@@ -133,7 +139,8 @@ export default {
 			});
 		},
 		copyOutput() {
-			navigator.clipboard.writeText(this.data.output)
+			//navigator.clipboard.writeText(this.data.output)
+			this.writeText(this.data.output)
 			.then(text => {
 				this.notify('copySuccess');
 			})
@@ -153,7 +160,9 @@ export default {
 			var queryString = Object.keys(params).map(key => key + '=' + params[key]).join('&');
 			var output = `${baseUrl}?${queryString}`;
 
-			navigator.clipboard.writeText(output)
+
+			//navigator.clipboard.writeText(output)
+			this.writeText(output)
 			.then(text => {
 				this.notify('permalinkSuccess');
 			})
@@ -177,6 +186,31 @@ export default {
 		},
 		scrollToInput() {
 			this.$refs.input.scrollIntoView(); 
+		},
+		writeText(str) {
+			return new Promise(function(resolve, reject) {
+				/********************************/
+				var range = document.createRange();
+				range.selectNodeContents(document.body);
+				document.getSelection().addRange(range);
+				/********************************/
+
+				var success = false;
+				function listener(e) {
+					e.clipboardData.setData("text/plain", str);
+					e.preventDefault();
+					success = true;
+				}
+				document.addEventListener("copy", listener);
+				document.execCommand("copy");
+				document.removeEventListener("copy", listener);
+
+				/********************************/
+				document.getSelection().removeAllRanges();
+				/********************************/
+
+				success ? resolve(): reject();
+			});
 		}
 	},
 	template: `
@@ -232,6 +266,7 @@ export default {
 							<button
 								class="btn btn-primary mb-2"
 								@click="pasteInput()"
+								v-if="states.hasClipboard"
 							>
 								<i class="fas fa-paste"></i>
 								<span class="d-none d-lg-inline">
