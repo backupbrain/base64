@@ -209,7 +209,7 @@ export default {
 									@click="setDecodeMode()"
 								>
 									<i class="fas fa-unlock"></i>
-									<span class="d-none d-sm-inline">
+									<span class="d-none d-md-inline">
 										{{ $t('decodeAction') }}
 									</span>
 								</button>
@@ -219,7 +219,7 @@ export default {
 									@click="setEncodeMode()"
 								>
 									<i class="fas fa-lock"></i>
-									<span class="d-none d-sm-inline">
+									<span class="d-none d-md-inline">
 										{{ $t('encodeAction') }}
 									</span>
 								</button>
@@ -229,15 +229,15 @@ export default {
 								@click="pasteInput()"
 							>
 								<i class="fas fa-paste"></i>
-								<span class="d-none d-sm-inline">
+								<span class="d-none d-lg-inline">
 									{{ $t('paste') }}
 								</span>
 							</button>
 							<button
-								class="btn btn-primary mb-2 d-none"
+								class="btn btn-primary mb-2 d-none d-xs-inline"
 								@click="scrollToOutput()"
 							>
-								<i class="fas fa-sort-down"></i>
+								<i class="fas fa-caret-down"></i>
 								<span class="d-none">
 									{{ $t('seeOutput') }}
 								</span>
@@ -258,13 +258,22 @@ export default {
 					<div class="col-md-6 pb-4 d-flex flex-column" ref="output">
 						<div class="mb-2 text-right">
 							<button
+								class="btn btn-primary mb-2 d-none d-xs-inline"
+								@click="scrollToInput()"
+							>
+								<i class="fas fa-caret-up"></i>
+								<span class="d-none">
+									{{ $t('seeInput') }}
+								</span>
+							</button>
+							<button
 								class="btn btn-primary mb-2"
 								:class="{ disabled: data.output==null }"
 								@click="copyOutput()"
 								:disabled="data.output==null"
 							>
 								<i class="fas fa-copy"></i>
-								<span class="d-none d-sm-inline">
+								<span class="d-none d-lg-inline">
 									{{ $t('copy') }}
 								</span>
 							</button>
@@ -276,7 +285,7 @@ export default {
 								:disabled="data.output==null"
 							>
 								<i class="fas fa-save"></i>
-								<span class="d-none d-sm-inline">
+								<span class="d-none d-lg-inline">
 									{{ $t('save') }}
 								</span>
 							</a>
@@ -288,7 +297,7 @@ export default {
 								:disabled="data.output==null"
 							>
 								<i class="fas fa-save"></i>
-								<span class="d-none d-sm-inline">
+								<span class="d-none d-lg-inline">
 									{{ $t('save') }}
 								</span>
 							</a>
@@ -299,7 +308,7 @@ export default {
 								v-if="data.output==null"
 							>
 								<i class="fas fa-save"></i>
-								<span class="d-none d-sm-inline">
+								<span class="d-none d-lg-inline">
 									{{ $t('save') }}
 								</span>
 							</a>
@@ -308,17 +317,8 @@ export default {
 								@click="copyPermalink()"
 							>
 								<i class="fas fa-link"></i>
-								<span class="d-none d-sm-inline">
+								<span class="d-none d-lg-inline">
 									{{ $t('permalink') }}
-								</span>
-							</button>
-							<button
-								class="btn btn-primary mb-2 d-none"
-								@click="scrollToInput()"
-							>
-								<i class="fas fa-sort-up"></i>
-								<span class="d-none">
-									{{ $t('seeInput') }}
 								</span>
 							</button>
 						</div>
