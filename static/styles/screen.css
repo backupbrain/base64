@@ -39,15 +39,22 @@ a:hover, a:focus {
 	transition: all 0.5s ease;
 }
 textarea {
-	min-height: 30rem;
 	font-family: 'Nova Mono', monospace;
 	background-color: var(--secondary-light);
+}
+@media (min-width: 768px) {
+	textarea {
+		min-height: 30rem;
+	}
 }
 body {
 	background-color: var(--primary-dark);
 }
 nav {
 	background-color: var(--secondary-medium);
+}
+@media (min-width: 576px) {
+
 }
 .navbar {
 	display: block;

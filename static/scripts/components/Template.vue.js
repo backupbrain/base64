@@ -201,7 +201,9 @@ export default {
 									@click="setDecodeMode()"
 								>
 									<i class="fas fa-unlock"></i>
-									{{ $t('decodeAction') }}
+									<span class="d-sm-none d-md-block">
+										{{ $t('decodeAction') }}
+									</span>
 								</button>
 								<button
 									class="btn btn-primary mb-2"
@@ -209,7 +211,9 @@ export default {
 									@click="setEncodeMode()"
 								>
 									<i class="fas fa-lock"></i>
-									{{ $t('encodeAction') }}
+									<span class="d-sm-none d-md-block">
+										{{ $t('encodeAction') }}
+									</span>
 								</button>
 							</div>
 							<button
@@ -217,7 +221,9 @@ export default {
 								@click="pasteInput()"
 							>
 								<i class="fas fa-paste"></i>
-								{{ $t('paste') }}
+								<span class="d-sm-none d-md-block">
+									{{ $t('paste') }}
+								</span>
 							</button>
 						</div>
 						<div class="flex-grow-1">
@@ -241,7 +247,9 @@ export default {
 								:disabled="data.output==null"
 							>
 								<i class="fas fa-copy"></i>
-								{{ $t('copy') }}
+								<span class="d-sm-none d-md-block">
+									{{ $t('copy') }}
+								</span>
 							</button>
 							<a
 								class="btn btn-primary mb-2"
@@ -251,7 +259,9 @@ export default {
 								:disabled="data.output==null"
 							>
 								<i class="fas fa-save"></i>
-								{{ $t('save') }}
+								<span class="d-sm-none d-md-block">
+									{{ $t('save') }}
+								</span>
 							</a>
 							<a
 								class="btn btn-primary mb-2"
@@ -261,7 +271,9 @@ export default {
 								:disabled="data.output==null"
 							>
 								<i class="fas fa-save"></i>
-								{{ $t('save') }}
+								<span class="d-sm-none d-md-block">
+									{{ $t('save') }}
+								</span>
 							</a>
 							<a
 								class="btn btn-primary mb-2 disabled"
@@ -270,14 +282,18 @@ export default {
 								v-if="data.output==null"
 							>
 								<i class="fas fa-save"></i>
-								{{ $t('save') }}
+								<span class="d-sm-none d-md-block">
+									{{ $t('save') }}
+								</span>
 							</a>
 							<button
 								class="btn btn-primary mb-2"
 								@click="copyPermalink()"
 							>
 								<i class="fas fa-link"></i>
-								{{ $t('permalink') }}
+								<span class="d-sm-none d-md-block">
+									{{ $t('permalink') }}
+								</span>
 							</button>
 						</div>
 						<div class="flex-grow-1">
