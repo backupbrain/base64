@@ -24,6 +24,7 @@ export default {
 				seeInput: 'Scroll to input',
 				seeOutput: 'Scroll to output',
 				mitLicense: 'MIT License',
+				loadingFacebookComments: 'Loading Facebook Comments...',
 			},
 			fr: {
 				title: 'Encodeur et décodeur Base64',
@@ -44,6 +45,7 @@ export default {
 				seeInput: 'Faites défiler pour entrer',
 				seeOutput: 'Faites défiler jusqu\'à la résultat',
 				mitLicense: 'Licence MIT',
+				loadingFacebookComments: 'Chargement des commentaires Facebook ...',
 			},
 			es: {
 				title: 'Codificador y decodificador Base64',
@@ -64,6 +66,7 @@ export default {
 				seeInput: 'Desplazarse a la entrada',
 				seeOutput: 'Desplazarse al resultado',
 				mitLicense: 'Licencia MIT',
+				loadingFacebookComments: 'Cargando comentarios de Facebook ...',
 			},
 			de: {
 				title: 'Base64 Encoder und Decoder',
@@ -84,6 +87,7 @@ export default {
 				seeInput: 'Scrollen Sie zur Eingabe',
 				seeOutput: 'Scrollen Sie zum Ergebnis',
 				mitLicense: 'MIT-Lizenz',
+				loadingFacebookComments: 'Laden von Facebook-Kommentaren ...',
 			},
 			gr: {
 				title: 'Κωδικοποιητής και αποκωδικοποιητής Base64',
@@ -104,6 +108,7 @@ export default {
 				seeInput: 'Μεταβείτε στην επιλογή εισαγωγής',
 				seeOutput: 'Μεταβείτε στο αποτέλεσμα',
 				mitLicense: 'Άδεια MIT',
+				loadingFacebookComments: 'Φόρτωση Facebook Σχόλια ...',
 			},
 			ar: {
 				title: 'Base64 التشفير وفك التشفير',
@@ -124,6 +129,7 @@ export default {
 				seeInput: 'انتقل إلى الإدخال',
 				seeOutput: 'انتقل إلى النتيجة',
 				mitLicense: 'رخصة MIT',
+				loadingFacebookComments: 'جارٍ تحميل تعليقات Facebook ...',
 			},
 			tr: {
 				title: 'Base64 Kodlayıcı ve Kod Çözücü',
@@ -135,7 +141,7 @@ export default {
 				paste: 'Yapıştırmak',
 				permalink: 'kalıcı',
 				inputPlaceholder: 'Buraya metin veya Base64 içeriği yazın',
-				outputPlaceholder: 'Çıktı burada görünecek',
+				outputPlaceholder: 'Результат появится здесь',
 				invalidInput: '(Hata: Giriş geçerli bir Base64 dizesi değildi)',
 				permalinkSuccess: 'Kalıcı bağlantı panoya kopyalandı',
 				copySuccess: 'Sonucu panoya kopyaladı',
@@ -144,6 +150,28 @@ export default {
 				seeInput: 'Girişe ilerleyin',
 				seeOutput: 'Sonuca ilerleyin',
 				mitLicense: 'MIT Lisansı',
+				loadingFacebookComments: 'Facebook Yorumları Yükleniyor ...',
+			},
+			en: {
+				title: 'Base64 кодер и декодер',
+				logoAlt: 'Изображение логотипа',
+				decodeAction: 'От Base64',
+				encodeAction: 'До Base64',
+				copy: 'копия',
+				save: 'Сохранить',
+				paste: 'Вставить',
+				permalink: 'Постоянная ссылка',
+				inputPlaceholder: 'Введите текст или содержимое Base64 здесь',
+				outputPlaceholder: 'Выход появится здесь',
+				invalidInput: '(Ошибка: ввод не был допустимой строкой Base64)',
+				permalinkSuccess: 'Скопирован постоянная ссылка в буфер обмена',
+				copySuccess: 'Скопировал результат в буфер обмена',
+				copyFail: 'Не удалось получить доступ к буферу обмена',
+				pasteFail: 'Не удалось получить доступ к буферу обмена',
+				seeInput: 'Прокрутите до ввода',
+				seeOutput: 'Прокрутите до результата',
+				mitLicense: 'Лицензия MIT',
+				loadingFacebookComments: 'Загрузка комментариев Facebook ...',
 			},
 		}
 	},
@@ -177,15 +205,16 @@ export default {
 				hasClipboard: false,
 			},
 			supportedLanguages: [
-				{ id: 'en', name: 'English' },
-				{ id: 'fr', name: 'Français' },
-				{ id: 'es', name: 'Español' },
-				{ id: 'de', name: 'Deutsche' },
-				{ id: 'gr', name: 'Ελληνικά' },
-				{ id: 'ar', name: 'عربى' },
-				{ id: 'tr', name: 'Türk' },
+				{ id: 'en', name: 'English', fbLink: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
+				{ id: 'fr', name: 'Français', fbLink: 'https://connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
+				{ id: 'es', name: 'Español', fbLink: 'https://connect.facebook.net/es_LA/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
+				{ id: 'de', name: 'Deutsche', fbLink: 'https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
+				{ id: 'gr', name: 'Ελληνικά', fbLink: 'https://connect.facebook.net/el_GR/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
+				{ id: 'ar', name: 'عربى', fbLink: 'https://connect.facebook.net/ar_AR/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
+				{ id: 'tr', name: 'Türk', fbLink: 'https://connect.facebook.net/tr_TR/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
+				{ id: 'ru', name: 'русский', fbLink: 'https://connect.facebook.net/ru_RU/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
 			],
-			currentLanguage: { id: 'en', name: 'English' },
+			currentLanguage: { id: 'en', name: 'English', fbLink: 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v6.0&appId=1530095437214003&autoLogAppEvents=1' },
 		}
 	},
 	created() {
@@ -562,7 +591,7 @@ export default {
 		</div>
 		<article>
 			<section class="container">
-				<div class="fb-comments" data-href="https://backupbrain.github.io/quantum-compiler-simulator/" data-width="100%" data-numposts="20" data-colorscheme="dark">Loading Facebook Comments...</div>
+				<div class="fb-comments" data-href="https://backupbrain.github.io/base64/" data-width="100%" data-numposts="5" data-colorscheme="dark">{{ $t('loadingFacebookComments') }}</div>
 			</section>
 		</article>
 		</div>
