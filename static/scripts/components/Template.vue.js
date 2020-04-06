@@ -440,7 +440,7 @@ export default {
 									@click="setDecodeMode()"
 								>
 									<i class="fas fa-unlock"></i>
-									<span class="d-none d-xs-inline">
+									<span class="d-none d-sm-inline">
 										{{ $t('decodeAction') }}
 									</span>
 								</button>
@@ -450,7 +450,7 @@ export default {
 									@click="setEncodeMode()"
 								>
 									<i class="fas fa-lock"></i>
-									<span class="d-none d-xs-inline">
+									<span class="d-none d-sm-inline">
 										{{ $t('encodeAction') }}
 									</span>
 								</button>
