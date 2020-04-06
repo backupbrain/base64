@@ -476,22 +476,22 @@ export default {
 							</button>
 						</div>
 						<div class="flex-grow-1">
-							<!--textarea
+							<textarea
 								class="w-100 h-100 p-2 rounded"
 								name="encoded"
 								spellcheck="false"
 								:placeholder="$t('inputPlaceholder')"
 								v-model="data.input"
 								@input="inputChanged()"
-							></textarea-->
-							<div
+							></textarea>
+							<!--div
 								class="w-100 h-100 p-2 rounded textarea"
 								contenteditable="true"
 								spellcheck="false"
 								:placeholder="$t('inputPlaceholder')"
 								v-model="data.input"
 								@input="handleInputKeystroke($event)"
-							></div>
+							></div-->
 						</div>
 					</div>
 
@@ -563,18 +563,18 @@ export default {
 							</button>
 						</div>
 						<div class="flex-grow-1">
-							<!--textarea
+							<textarea
 								class="w-100 h-100 p-2 rounded"
 								name="decoded"
 								spellcheck="false"
 								readonly
 								:placeholder="$t('outputPlaceholder')"
 								v-model="data.output"
-							></textarea-->
-							<div
+							></textarea>
+							<!--div
 								class="w-100 h-100 p-2 rounded textarea"
 								:placeholder="$t('outputPlaceholder')"
-							>{{ data.output }}</div>
+							>{{ data.output }}</div-->
 						</div>
 					</div>
 
