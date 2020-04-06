@@ -8,6 +8,9 @@ html {
 	.textarea {
 		min-height: 9rem;
 	}
+	h1 {
+		font-size: 1rem;
+	}
 }
 @media (min-width: 768px) {
 	.d-sm-inline {
@@ -15,6 +18,9 @@ html {
 	}
 	.textarea {
 		min-height: 15rem;
+	}
+	h1 {
+		font-size: 1rem;
 	}
 }
 @media (min-width: 992px) {
@@ -24,6 +30,9 @@ html {
 	.textarea {
 		min-height: 20rem;
 	}
+	h1 {
+		font-size: 1.8rem;
+	}
 }
 @media (min-width: 1200px) {
 	.d-lg-inline {
@@ -31,6 +40,9 @@ html {
 	}
 	.textarea {
 		min-height: 20rem;
+	}
+	h1 {
+		font-size: 1.8rem;
 	}
 }
 :root {
@@ -53,9 +65,7 @@ h1, h2 {
 	font-family: 'Fjalla One', sans-serif;
 }
 h1 {
-	font-size: 1.8rem;
 	margin-bottom: 0px;
-
 	color: var(--primary-dark);
 	text-decoration: none;
 }
